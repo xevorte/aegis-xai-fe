@@ -35,7 +35,7 @@ export function UserResultsPanel({ item }: UserResultsPanelProps) {
       <div className="user-empty-panel">
         <span className="empty-mark">✦</span>
         <h3>Hasil Anda akan muncul di sini</h3>
-        <p>Isi pertanyaan skrining, lalu tekan “Jalankan analisis”. Kami akan menjelaskan hasilnya dengan bahasa sederhana.</p>
+        <p>Isi pertanyaan skrining, lalu tekan “Lihat ringkasan saya”. Hasilnya akan tampil di sini.</p>
       </div>
     );
   }
@@ -65,13 +65,13 @@ export function UserResultsPanel({ item }: UserResultsPanelProps) {
         </div>
         <div>
           <strong>Apa artinya?</strong>
-          <p>Semakin tinggi skor, semakin banyak pola pada jawaban Anda yang mirip dengan kelompok berisiko di data penelitian.</p>
-          <span className="user-consensus">{item.consensus ?? "Hasil dirangkum dari beberapa model."}</span>
+          <p>Semakin tinggi skor, semakin banyak pola pada jawaban Anda yang perlu diperhatikan bersama tenaga kesehatan.</p>
+          <span className="user-consensus">Gunakan ringkasan ini sebagai bahan diskusi dengan tenaga kesehatan.</span>
         </div>
       </div>
 
       <section className="user-result-section">
-        <div className="user-section-title"><span>01</span><div><h3>Hal yang paling berpengaruh</h3><p>Faktor ini membantu menjelaskan mengapa skor Anda terbentuk.</p></div></div>
+        <div className="user-section-title"><span>01</span><div><h3>Hal yang perlu diperhatikan</h3><p>Bagian ini menunjukkan jawaban yang paling berkaitan dengan ringkasan Anda.</p></div></div>
         {features.length > 0 ? <div className="user-feature-list">{features.map((feature) => <div className="user-feature-row" key={feature.feature}><span>{friendlyFeatureName(feature.feature)}</span><b>{feature.impact_percent.toFixed(1)}%</b><i><em style={{ width: `${Math.min(100, feature.impact_percent)}%` }} /></i></div>)}</div> : <p className="user-muted">Penjelasan faktor belum tersedia untuk kondisi ini.</p>}
       </section>
 

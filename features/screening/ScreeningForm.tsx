@@ -53,7 +53,7 @@ export function ScreeningForm({ payload, loading, error, status, onChange, onSub
         </div>
       </div>
 
-      <div className="form-footer"><p><span>i</span> Skor adalah hasil evaluasi internal, bukan diagnosis medis.</p><button className="button button-primary" onClick={onSubmit} disabled={loading} aria-busy={loading}>{loading ? "Mengirim data…" : "Jalankan analisis ↗"}</button></div>
+      <div className="form-footer"><p><span>i</span> Hasil ini adalah ringkasan pola jawaban, bukan diagnosis medis.</p><button className="button button-primary" onClick={onSubmit} disabled={loading} aria-busy={loading}>{loading ? "Menyiapkan ringkasan…" : "Lihat ringkasan saya ↗"}</button></div>
       {status && <div className="form-status" role="status" aria-live="polite">{status}</div>}
       {error && <div className="inline-alert" role="alert">{error}</div>}
     </div>
